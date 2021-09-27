@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pitak/AppRoutes.dart';
 
 class OnBoardingController extends GetxController {
   late PageController pageController;
@@ -15,7 +16,7 @@ class OnBoardingController extends GetxController {
   }
 
   gotoNextScreen() {
-    print('go to');
+    Get.offAndToNamed(AppRoutes.HOME);
   }
 
   nextView() {

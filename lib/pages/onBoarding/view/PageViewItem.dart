@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:pitak/constants.dart';
+import 'package:pitak/widgets/CustomButton.dart';
 
 import 'TitleAndSubtitle.dart';
 
@@ -33,32 +34,7 @@ class PageViewItem extends StatelessWidget {
           ),
           Spacer(),
           (this.isLast)
-              ? Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(mainColor),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                        ),
-                        onPressed: () {
-                          this.skip!();
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            'Начать',
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                )
+              ? CustomButton(label: 'Начать', onPress: this.skip!)
               : Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
